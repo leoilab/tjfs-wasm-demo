@@ -1,50 +1,83 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel sample app</title>
+    <title>TensorFlow</title>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles.css" />
     <style>
-      .pred-container {
-        margin-bottom: 20px;
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900');
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
       }
-      .pred-container > div {
+
+      html {
+        font-size: 4vmin;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: #262626;
+        min-height: 100vh;
+        padding: 10vmin;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        font-weight: 830;
+        font-size: 2.6rem;
+        line-height: 2.5rem;
+      }
+
+      h2 {
+        font-weight: 625;
+        font-size: 1.05rem;
+        line-height: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-weight: 350;
+        font-size: 1rem;
+        line-height: 1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      img {
+        margin-top: 1rem;
+      }
+
+      #backend {
+        outline: none;
         display: inline-block;
-        margin-right: 20px;
-        vertical-align: top;
+        padding-left: 0.2em;
+        padding-right: 0.2em;
+        margin-left: -0.2em;
+        margin-right: -0.2em;
+        border-radius: 0.2em;
+        caret-color: currentColor;
       }
-      .row {
-        display: table-row;
+
+      #backend:focus {
+        box-shadow: inset 0 0 0 2px currentColor;
       }
-      .cell {
-        display: table-cell;
-        padding-right: 20px;
-      }
-      #file-container {
-        margin-bottom: 20px;
+
+      [id] {
+        color: #006cd0;
+        font-weight: 830;
       }
     </style>
   </head>
   <body>
-    <div class="tfjs-example-container">
-      <section class='title-area'>
-        <h1>TensorFlow.js running on WebAssembly backend</h1>
-      </section>
-  
-      <section>
-        <p class='section-head'>Status</p>
-        <div id="status"></div>
-      </section>
-  
-      <section>
-        <p class='section-head'>Prediction</p>
-  
-        <div id="predictions"></div>
-  
-        <img id="img" src="./img/piano.jpg" width="224px" />
-      </section>
-  
-      <script src="index.js"></script>
-    </div>
-  </body>
-</html>
+    <div>
+      <h1>TensorFlow.js running on <br/><span id="backend" contenteditable spellcheck="false">webgl</span> backend</h1>
+
+      <h2>Status</h2>
+      <p>Done in: <span id="totalTime1"></span></p>
+      <p>Not including preprocessing: <span id="totalTime2"></span></p>
+      <img src="./img/piano.jpg" width="224px" />
+
+      <script src="index.js" />

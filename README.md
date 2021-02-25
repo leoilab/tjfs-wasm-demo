@@ -32,8 +32,10 @@ The app opens in a new browser window/tab.
 
 ## Switching between WASM and normal backend
 
-Simply comment the below line in `index.js` file and run the app again:
+Simply paste the below line in `index.js` file and run the app again:
 
 ```js
-await tf.setBackend("wasm");
+  // Set the backend to WASM and wait for the module to be ready.
+  await tf.setBackend("wasm");
+  utils.title("TensorFlow.js running on WebAssembly backend")
 ```
